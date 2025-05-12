@@ -60,12 +60,12 @@ public class ProyectoTemperaturas {
 
     public static void mostrarPromedioPorRangoDeFechas(List<RegistroTemperatura> registros) {
         Scanner scanner = new Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        System.out.print("Ingrese la fecha de inicio (dd/mm/yyyy): ");
+        System.out.print("Ingrese la fecha de inicio (dd/MM/yyyy): ");
         LocalDate inicio = LocalDate.parse(scanner.nextLine(), formatter);
 
-        System.out.print("Ingrese la fecha de fin (dd/mm/yyyy): ");
+        System.out.print("Ingrese la fecha de fin (dd/MM/yyyy): ");
         LocalDate fin = LocalDate.parse(scanner.nextLine(), formatter);
 
         Map<String, Double> promedios = registros.stream()
@@ -84,9 +84,9 @@ public class ProyectoTemperaturas {
 
     public static void ciudadMasCalurosaYFriaPorFecha(List<RegistroTemperatura> registros) {
         Scanner scanner = new Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        System.out.print("Ingrese una fecha específica (dd/mm/yyyy): ");
+        System.out.print("Ingrese una fecha específica (dd/MM/yyyy): ");
         LocalDate fechaIngresada = LocalDate.parse(scanner.nextLine(), formatter);
 
         List<RegistroTemperatura> registrosFiltrados = registros.stream()

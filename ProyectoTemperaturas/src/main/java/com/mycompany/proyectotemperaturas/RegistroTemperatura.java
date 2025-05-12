@@ -4,19 +4,17 @@
  */
 package com.mycompany.proyectotemperaturas;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author bonni
  */
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class RegistroTemperatura {
     private String ciudad;
     private LocalDate fecha;
     private double temperatura;
-
 
     public RegistroTemperatura(String ciudad, LocalDate fecha, double temperatura) {
         this.ciudad = ciudad;
@@ -24,14 +22,12 @@ public class RegistroTemperatura {
         this.temperatura = temperatura;
     }
 
-
     public RegistroTemperatura(String ciudad, String fechaStr, String tempStr) {
         this.ciudad = ciudad;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.fecha = LocalDate.parse(fechaStr, formatter);
+        this.fecha = LocalDate.parse(fechaStr, formatter); // ← aquí usamos la variable correcta 🛠️
         this.temperatura = Double.parseDouble(tempStr);
     }
-
 
     public String getCiudad() {
         return ciudad;
